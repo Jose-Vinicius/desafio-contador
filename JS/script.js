@@ -21,8 +21,10 @@ function calcular(){
     } else if(numeroDePulo == 0){
         numeroDePulo = 1;
         loop();
+        agruparDados()
     } else {
         loop();
+        agruparDados()
     }
 
     function loop(){
@@ -36,7 +38,8 @@ function calcular(){
         document.getElementById('puloNumber').value = "";
     }
 
-
+    function agruparDados(){ 
+    
     let valoresDosresultados = [];
 
     let valoresDosInputs = [
@@ -62,5 +65,6 @@ function calcular(){
     let = itemSalvo = localStorage.getItem('valoresDosResultados');
 
     console.log('itemSalvo:', JSON.parse(itemSalvo))
+    }
 }
 
