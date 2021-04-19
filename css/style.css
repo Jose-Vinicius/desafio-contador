@@ -9,7 +9,7 @@
 
     #box{
         width: 450px;
-        height: 350px;
+        height: 30%;
         background-color: rgb(105, 105, 105);
         text-align: center;
         margin: 50px auto;
@@ -53,4 +53,27 @@
         cursor:pointer;
         border: none;
         border-radius:10px;
+        transition: 0.15s;
+    }
+
+    button:hover{
+        transform: scale(1.1);
+        background-color: rgba(181, 207, 255, 0.849);
+        border: 2px solid black;
+    }
+
+    #resultado{
+        padding:10px 5px;
+    }
+
+    #resultado span{
+        font-size: 1.8em;
+        font-weight: bold;
+        color:white;
+    }
+
+    #resultado h2{
+        font-size:1.8em;
+        font-weight: 600;
+        color:white;
     }
