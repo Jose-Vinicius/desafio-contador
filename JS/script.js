@@ -2,13 +2,12 @@
 document.getElementById('calcular').onclick = function (){calcular();}
 
 //funções
-
 function calcular(){
+
     let primeiroNumero = Number(document.getElementById('inicialNumber').value);
     let ultimoNumero = Number(document.getElementById('finalNumber').value);
     let numeroDePulo = Number(document.getElementById('puloNumber').value);
     let resultado = document.getElementById('resultado');
-    
 
     if(primeiroNumero === ""){
         resultado.innerHTML = '<h2>Por favor insira um valor valido no primeiro numero!</h2>';
@@ -26,19 +25,25 @@ function calcular(){
         loop();
         agruparDados()
     }
+}
+function loop(){
 
-    function loop(){
+    let primeiroNumero = Number(document.getElementById('inicialNumber').value);
+    let ultimoNumero = Number(document.getElementById('finalNumber').value);
+    let numeroDePulo = Number(document.getElementById('puloNumber').value);
+    let resultado = document.getElementById('resultado');
         
-        resultado.innerHTML = "";
-        for( let i = primeiroNumero; i <= ultimoNumero; i += numeroDePulo){
-            resultado.innerHTML += `<span> ${i}, </span>`;
-        };
-        document.getElementById('inicialNumber').value = "";
-        document.getElementById('finalNumber').value = "";
-        document.getElementById('puloNumber').value = "";
-    }
+    resultado.innerHTML = "";
+    for( let i = primeiroNumero; i <= ultimoNumero; i += numeroDePulo){
+        resultado.innerHTML += `<span> ${i}, </span>`;
+    };
+}
 
-    function agruparDados(){ 
+function agruparDados(){ 
+
+    let primeiroNumero = Number(document.getElementById('inicialNumber').value);
+    let ultimoNumero = Number(document.getElementById('finalNumber').value);
+    let numeroDePulo = Number(document.getElementById('puloNumber').value);
     
     let valoresDosresultados = [];
 
@@ -60,11 +65,9 @@ function calcular(){
 
     console.log(valoresDosresultados);
 
-    localStorage.setItem('valoresDosResultados', JSON.stringify(valoresDosresultados));
+    /*localStorage.setItem('valoresDosResultados', JSON.stringify(valoresDosresultados));
 
     let = itemSalvo = localStorage.getItem('valoresDosResultados');
 
-    console.log('itemSalvo:', JSON.parse(itemSalvo))
-    }
+    console.log('itemSalvo:', JSON.parse(itemSalvo))*/
 }
-
