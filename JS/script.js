@@ -1,5 +1,8 @@
 //botao
 document.getElementById('calcular').onclick = function (){calcular();}
+//o proprio VScode me recomendou fazer esse import
+import { writeFileSync } from 'fs';
+const fs = require(fs);
 
 //funções
 function calcular(){
@@ -10,13 +13,13 @@ function calcular(){
     let resultado = document.getElementById('resultado');
 
     if(primeiroNumero === ""){
-        resultado.innerHTML = '<h2>Por favor insira um valor valido no primeiro numero!</h2>';
-    } else if(ultimoNumero === ''){
-        resultado.innerHTML = '<h2>Por favor insira um valor valido no numero final!</h2>';
+        resultado.innerText += 'Por favor insira um valor valido no primeiro numero!';
+    } else if(ultimoNumero === ""){
+        resultado.innerText = 'Por favor insira um valor valido no numero final!';
     } else if(ultimoNumero <= primeiroNumero ){
-        resultado.innerHTML = '<h2>Os valores do ultimo numero não pode ser menor ou igual ao do numero inicial</h2>';
+        resultado.innerHTML = 'Os valores do ultimo numero não pode ser menor ou igual ao do numero inicial';
     } else if(numeroDePulo === ''){
-        resultado.innerHTML = '<h2>Por favor insira um valor valido no numero de pulos!</h2>';
+        resultado.innerHTML = 'Por favor insira um valor valido no numero de pulos!';
     } else if(numeroDePulo == 0){
         numeroDePulo = 1;
         loop();
@@ -63,11 +66,14 @@ function agruparDados(){
 
     valoresDosresultados.push(valoresDeSaida)
 
-    console.log(valoresDosresultados);
+    //essa foi a solução que achei na net
+    let data = JSON.stringify(student);
+    writeFileSync('valoresDosResultados', data);
 
-    /*localStorage.setItem('valoresDosResultados', JSON.stringify(valoresDosresultados));
+    //let teste = JSON.stringify(valoresDosresultados)
+    
+    
 
-    let = itemSalvo = localStorage.getItem('valoresDosResultados');
-
-    console.log('itemSalvo:', JSON.parse(itemSalvo))*/
+    //let fs = require('json')
+    //fs.writeFile('dados.json', json, 'utf8', callback);
 }

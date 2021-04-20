@@ -67,12 +67,12 @@
     }
 
     #resultado span{
-        font-size: 1.8em;
+        font-size: 1.3em;
         font-weight: bold;
         color:white;
     }
 
-    #resultado h2{
+    #resultado{
         font-size:1.8em;
         font-weight: 600;
         color:white;
